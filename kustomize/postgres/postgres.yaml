@@ -20,6 +20,12 @@ spec:
         resources:
           requests:
             storage: 1Gi
+  patroni:
+    dynamicConfiguration:
+      postgresql:
+        pg_hba:
+          - "host all all 0.0.0.0/0 trust" # this line enabled logical replication with programmatic access
+          - "host all postgres 127.0.0.1/32 md5"
   backups:
     pgbackrest:
       image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.47-0
