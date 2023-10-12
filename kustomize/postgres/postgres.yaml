@@ -5,6 +5,12 @@ metadata:
 spec:
   image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-15.4-0
   postgresVersion: 15
+  users:
+    - name: rhino
+      databases:
+        - registry
+        - notaryserver
+        - notarysigner
   instances:
     - name: instance1
       dataVolumeClaimSpec:
