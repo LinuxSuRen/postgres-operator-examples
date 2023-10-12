@@ -7,7 +7,7 @@ spec:
   postgresVersion: 15
   users:
     - name: rhino
-      options: "SUPERUSER"
+      options: "SUPERUSER REPLICATION"
       databases:
         - registry
         - notaryserver
